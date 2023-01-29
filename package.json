@@ -3,22 +3,31 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
-  "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html"
-  },
+  "author": "regaliastar",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
-    "@babel/core": "7.14.0",
-    "node-sass": "4.14.1",
-    "parcel-bundler": "1.12.5",
-    "sass": "1.27.0",
-    "sass-loader": "10.0.3",
-    "scss": "0.2.4"
+    "lerna": "^6.4.1"
   },
   "devDependencies": {
-    "@babel/core": "7.2.0",
-    "parcel-bundler": "^1.6.1"
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.4"
   },
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "fix": "eslint --fix"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "eslint --fix"
+  }
 }
